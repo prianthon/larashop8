@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\OrderController;
 
 
 Route::get('/', function () {
@@ -32,3 +33,6 @@ Route::get('/books/trash', [BookController::class, 'trash'])->name('books.trash'
 Route::post('/books/{book}/restore', [BookController::class, 'restore'])->name('books.restore');
 Route::delete('/books/{id}/delete-permanent', [BookController::class, 'deletePermanent'])->name('books.delete-permanent');
 Route::resource('books', BookController::class);
+
+// Resource Order
+Route::resource('orders', OrderController::class);
